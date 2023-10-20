@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,7 +33,12 @@ class FoodBasketFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        val backButton = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                Navigation.goTo(binding.imageViewGoHome,R.id.basketToHome)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,backButton)
         viewModel.userProfileLiveData.observe(viewLifecycleOwner){
             if(it != null){
                 binding.textViewBasketTeslimatAdresi.text = "Teslimat adresi : ${it.user_adress}"

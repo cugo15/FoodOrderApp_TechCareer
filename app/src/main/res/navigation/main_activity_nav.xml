@@ -28,9 +28,7 @@
         <action
             android:id="@+id/basketToOrder"
             app:destination="@id/ordersFragment"
-            app:launchSingleTop="false"
-            app:popUpTo="@id/homeFragment"
-            app:popUpToInclusive="false" />
+            app:launchSingleTop="false" />
     </fragment>
     <fragment
         android:id="@+id/foodDetailsFragment"
@@ -43,7 +41,6 @@
         <action
             android:id="@+id/detailsToBasket"
             app:destination="@id/foodBasketFragment"
-            app:popUpTo="@id/homeFragment"
             app:popUpToInclusive="true" />
         <argument
             android:name="food"

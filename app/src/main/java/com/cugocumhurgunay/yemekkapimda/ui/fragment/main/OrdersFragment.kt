@@ -10,6 +10,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.PopupMenu
+import androidx.activity.OnBackPressedCallback
 import androidx.core.graphics.drawable.toDrawable
 import androidx.fragment.app.viewModels
 import androidx.navigation.Navigation
@@ -39,6 +40,13 @@ class OrdersFragment : Fragment() {
         binding.imageViewOrderClose.setOnClickListener {
             Navigation.goTo(it,R.id.orderToHome)
         }
+        val backButton = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                Navigation.goTo(binding.imageViewOrderClose,R.id.orderToHome)
+            }
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner,backButton)
+
         binding.rvOrder.layoutManager = LinearLayoutManager(requireContext())
         val popupMenu = PopupMenu(requireContext(), binding.imageViewOrderMenu)
         popupMenu.menuInflater.inflate(R.menu.orders_order_menu, popupMenu.menu)
