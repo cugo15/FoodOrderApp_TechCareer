@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/artanFiyat"
+        android:title="Artan Fiyat"
+         />
+    <item
+        android:id="@+id/azalanFiyat"
+        android:title="Azalan Fiyat"
+        />
+    <item
+        android:id="@+id/eskidenYeniye"
+        android:title="Eskiden Yeniye"
+        />
+    <item
+        android:id="@+id/yenidenEskiye"
+        android:title="Yeniden Eskiye"
+        />
+</menu>

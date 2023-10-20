@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "828909912781",
+    "project_id": "yemekkapimda-e5101",
+    "storage_bucket": "yemekkapimda-e5101.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:828909912781:android:96d63eda66cf9acaebdf84",
+        "android_client_info": {
+          "package_name": "com.cugocumhurgunay.yemekkapimda"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBEiHTEkAq3wVU4cPEfPnX2N3jbs0mD1o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

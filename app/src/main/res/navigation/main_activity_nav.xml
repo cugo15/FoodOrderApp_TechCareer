@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/favoriteFoodsFragment"
+        android:name="com.cugocumhurgunay.yemekkapimda.ui.fragment.main.FavoriteFoodsFragment"
+        android:label="fragment_favorite_foods"
+        tools:layout="@layout/fragment_favorite_foods" >
+        <action
+            android:id="@+id/favoriteToDetails"
+            app:destination="@id/foodDetailsFragment" />
+        <action
+            android:id="@+id/favToHome"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodBasketFragment"
+        android:name="com.cugocumhurgunay.yemekkapimda.ui.fragment.main.FoodBasketFragment"
+        android:label="fragment_food_basket"
+        tools:layout="@layout/fragment_food_basket" >
+        <action
+            android:id="@+id/basketToHome"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/basketToOrder"
+            app:destination="@id/ordersFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailsFragment"
+        android:name="com.cugocumhurgunay.yemekkapimda.ui.fragment.main.FoodDetailsFragment"
+        android:label="fragment_food_details"
+        tools:layout="@layout/fragment_food_details" >
+        <action
+            android:id="@+id/detailsToFavorite"
+            app:destination="@id/favoriteFoodsFragment" />
+        <action
+            android:id="@+id/detailsToBasket"
+            app:destination="@id/foodBasketFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="food"
+            app:argType="com.cugocumhurgunay.yemekkapimda.data.entity.Foods" />
+        <action
+            android:id="@+id/detailsToHome"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.cugocumhurgunay.yemekkapimda.ui.fragment.main.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/homeToDetails"
+            app:destination="@id/foodDetailsFragment" />
+        <action
+            android:id="@+id/homeToFav"
+            app:destination="@id/favoriteFoodsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.cugocumhurgunay.yemekkapimda.ui.fragment.main.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/profileToHome"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ordersFragment"
+        android:name="com.cugocumhurgunay.yemekkapimda.ui.fragment.main.OrdersFragment"
+        android:label="fragment_orders"
+        tools:layout="@layout/fragment_orders" >
+        <action
+            android:id="@+id/orderToHome"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
